@@ -83,9 +83,8 @@ const handleInputs = (readline, inputs) => {
       const messageUrl = `${discordApiUrl}/channels/${dmChannelId}/messages`
         + (messageId ? `/${messageId}` : "");
         
-      axios.post(
+      axios.get(
         messageUrl,
-        {content: "hello"},
         {headers}
       )
         .then(rsp => displayMessages(rsp.data))
